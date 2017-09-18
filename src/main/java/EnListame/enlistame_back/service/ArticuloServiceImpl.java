@@ -1,15 +1,16 @@
 package EnListame.enlistame_back.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import EnListame.enlistame_back.domain.Articulo;
 import EnListame.enlistame_back.dto.ArticuloDTO;
 import EnListame.enlistame_back.mapper.classmap.ArticuloMapper;
 import EnListame.enlistame_back.repository.ArticuloRepository;
 
+@Component("articuloRepository")
 public class ArticuloServiceImpl implements ArticuloService{
 	
 	@Autowired
