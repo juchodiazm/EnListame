@@ -3,9 +3,11 @@ package EnListame.enlistame_back.mapper.classmap;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import EnListame.enlistame_back.domain.Articulo;
 import EnListame.enlistame_back.dto.ArticuloDTO;
-
+@Component
 public class ArticuloMapper {
 
 	
@@ -36,7 +38,7 @@ public class ArticuloMapper {
 	
 	public Articulo mapArticuloToArticulo(Articulo articuloEntrada){
 		
-		Articulo articuloSalida = new Articulo();
+		Articulo articuloSalida = new Articulo(articuloEntrada.getCodArticulo(),articuloEntrada.getDespensa(),articuloEntrada.getNomArticulo());
 		articuloSalida.setCodArticulo(articuloEntrada.getCodArticulo());
 		articuloSalida.setCantidad(articuloEntrada.getCantidad());
 		articuloSalida.setDespensa(articuloEntrada.getDespensa());

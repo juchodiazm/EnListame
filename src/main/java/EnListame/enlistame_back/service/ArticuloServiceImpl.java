@@ -4,21 +4,24 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import EnListame.enlistame_back.domain.Articulo;
 import EnListame.enlistame_back.dto.ArticuloDTO;
 import EnListame.enlistame_back.mapper.classmap.ArticuloMapper;
 import EnListame.enlistame_back.repository.ArticuloRepository;
 
-@Component("articuloRepository")
+@Component("articuloService")
+@Transactional
 public class ArticuloServiceImpl implements ArticuloService{
 	
-	@Autowired
-	ArticuloRepository articuloRepository;
 	
 	@Autowired
 	ArticuloMapper articuloMapper;
 
+	@Autowired
+	ArticuloRepository articuloRepository;
+	
 	@Override
 	public List<ArticuloDTO> findAllItems() {
 		
@@ -40,19 +43,14 @@ public class ArticuloServiceImpl implements ArticuloService{
 	@Override
 	public ArticuloDTO createOrUpdateItem(ArticuloDTO articuloDTO) {
 		Articulo articulo = articuloRepository.getArticuloByCodArticulo(articuloDTO.getCodArticulo());
-		Articulo articuloNuevo;
-		if(null != articulo){
-			articuloNuevo = articuloMapper.mapArticuloToArticulo(articulo);
-		}
-		articuloNuevo = articuloRepository.save(null);
-		ArticuloDTO articuloDTO = 
-		
-		return null;
+		Articulo articuloNuevo = articuloMapper.mapArticuloToArticulo(articulo);
+		articuloDTO = articuloMapper.mapArticuloToDTO(articuloRepository.save(articuloNuevo));
+		return articuloDTO;
 	}
 
 	@Override
-	public void deleteItem(ArticuloDTO articulo) {
-		// TODO Auto-generated method stub
+	public void deleteItem(String codigoArticulo) {
+		articuloRepository.delete(codigoArticulo);
 		
 	}
 

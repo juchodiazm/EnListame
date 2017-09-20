@@ -41,5 +41,12 @@ public class Articulo implements Serializable{
 	@Column(name = "CANTIDAD")
 	private String cantidad;
 	
+	protected Articulo (){}
+	
+	public Articulo(String codArticulo,Despensa despensa , String nomArticulo){
+		this.codArticulo = codArticulo;
+		this.despensa = despensa;
+		this.nomArticulo = nomArticulo;
+	}
 	
 }
