@@ -17,5 +17,7 @@
 	<classpathentry kind="lib" path="C:/Users/A183956/.m2/repository/org/springframework/spring-tx/4.3.10.RELEASE/spring-tx-4.3.10.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/A183956/.m2/repository/org/springframework/data/spring-data-jpa/1.11.6.RELEASE/spring-data-jpa-1.11.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/A183956/.m2/repository/org/springframework/data/spring-data-rest-core/2.6.6.RELEASE/spring-data-rest-core-2.6.6.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/A183956/.m2/repository/ma/glasnost/orika/orika-core/1.5.1/orika-core-1.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/A183956/.m2/repository/org/springframework/spring-core/4.3.11.RELEASE/spring-core-4.3.11.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
