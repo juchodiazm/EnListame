@@ -8,8 +8,6 @@ import ma.glasnost.orika.metadata.ClassMapBuilder;
 import ma.glasnost.orika.metadata.Type;
 import ma.glasnost.orika.metadata.TypeFactory;
 
-
-
 /**
  * CustomClassMapBuilder provides a utility base for creating customized ClassMapBuilder, which determines type
  * parameters automatically. <br>

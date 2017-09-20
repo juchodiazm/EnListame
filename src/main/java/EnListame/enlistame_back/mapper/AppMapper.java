@@ -1,14 +1,8 @@
-package EnListame.enlistame_back.mapper.builder;
+package EnListame.enlistame_back.mapper;
 
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
-
-import EnListame.enlistame_back.mapper.classmap.CustomClassMapBuilder;
 import ma.glasnost.orika.Converter;
 import ma.glasnost.orika.Mapper;
 import ma.glasnost.orika.MapperFactory;
@@ -16,7 +10,11 @@ import ma.glasnost.orika.impl.ConfigurableMapper;
 import ma.glasnost.orika.impl.DefaultMapperFactory.Builder;
 import ma.glasnost.orika.unenhance.HibernateUnenhanceStrategy;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
+import EnListame.enlistame_back.mapper.classmap.CustomClassMapBuilder;
 
 
 
