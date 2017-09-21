@@ -1,6 +1,7 @@
 package EnListame.enlistame_back.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +30,7 @@ public class Usuario implements Serializable{
 	
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "COD_LISTA")
-	private Lista lista;
+	private List<Lista> lista;
 	
 	@Column(name = "PASS_US" , unique = true, nullable = false)
 	private String passUs;

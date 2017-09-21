@@ -1,6 +1,7 @@
 package EnListame.enlistame_back.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,6 +24,6 @@ public class Despensa implements Serializable{
 	
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "NOM_US")
-	private Usuario usuario;
+	private List<Usuario> usuario;
 
 }

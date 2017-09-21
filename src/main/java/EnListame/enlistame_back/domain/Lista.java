@@ -1,6 +1,7 @@
 package EnListame.enlistame_back.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,6 +33,6 @@ public class Lista implements Serializable{
 	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "COD_ARTICULO")
-	private Articulo articulo;
+	private List<Articulo> articulo;
 	
 }

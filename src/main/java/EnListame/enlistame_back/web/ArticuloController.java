@@ -20,7 +20,7 @@ import EnListame.enlistame_back.service.ArticuloService;
 public class ArticuloController {
 
 	@Autowired
-	private ArticuloService articuloService;
+	ArticuloService articuloService;
 	
 	@RequestMapping(value = "/findAllArticulos" , method = RequestMethod.GET)
 	public ResponseEntity <List<ArticuloDTO>> findAllArticulos(){

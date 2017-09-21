@@ -3,6 +3,7 @@ package EnListame.enlistame_back.mapper;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
+
 import ma.glasnost.orika.Converter;
 import ma.glasnost.orika.Mapper;
 import ma.glasnost.orika.MapperFactory;
@@ -17,8 +18,7 @@ import org.springframework.stereotype.Component;
 import EnListame.enlistame_back.mapper.classmap.CustomClassMapBuilder;
 
 
-
-@Component("appMapper")
+@Component("articuloMapper")
 public class AppMapper extends ConfigurableMapper {
 
 	@Autowired
