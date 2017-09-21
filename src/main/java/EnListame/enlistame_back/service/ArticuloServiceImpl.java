@@ -46,7 +46,6 @@ public class ArticuloServiceImpl implements ArticuloService{
 
 	@Override
 	public ArticuloDTO createOrUpdateItem(ArticuloDTO articuloDTO) {
-		Articulo articulo = articuloRepository.getArticuloByCodArticulo(articuloDTO.getCodArticulo());
 		Articulo articuloNuevo = articuloMapper.map(articuloDTO , Articulo.class);
 		return articuloMapper.map(articuloRepository.save(articuloNuevo), ArticuloDTO.class);
 	}
