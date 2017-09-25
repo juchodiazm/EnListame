@@ -2,18 +2,23 @@ package EnListame.enlistame_back.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 
 @Entity
 @Data
+@Table(name = "ARTICULO")
 public class Articulo implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -22,9 +27,12 @@ public class Articulo implements Serializable{
 	@Column(name = "COD_ARTICULO")
     private String codArticulo;
 	
-	@OneToOne
-	@JoinColumn(name = "ID_DESPEN")
-	private Despensa despensa;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "",
+	joinColumns = @JoinColumn(name = "ID_DESPEN"),
+	inverseJoinColumns = @JoinColumn(name = "COD_ARTICULO")
+	)
+	private Set<Despensa> despensa;
 	
 	@Column(name = "NOM_ARTICULO", unique = true , nullable = false)
 	private String nomArticulo;
@@ -43,9 +51,8 @@ public class Articulo implements Serializable{
 	
 	protected Articulo (){}
 	
-	public Articulo(String codArticulo,Despensa despensa , String nomArticulo){
+	public Articulo(String codArticulo, String nomArticulo){
 		this.codArticulo = codArticulo;
-		this.despensa = despensa;
 		this.nomArticulo = nomArticulo;
 	}
 	
